@@ -1,0 +1,1343 @@
+@import 'mixins';
+
+//extend variable
+.ulproperty{
+	@include padding(0,0,0,0);
+	@include margin(0,0,0,0);
+	@include list-style(none);
+}
+
+
+
+// color variable
+$brown-color: #6C412E;
+$white: #fff;
+$black: #000;
+$yellow:#FDD22E;
+$primary-blue:#10A0C5;
+$brown-text-color: #782e2e;
+$feature-sub-heading: #765555;
+
+body,h1,h2,h3,h4,h5,h6,span,div,p,strong,ul,li,a{
+	font-family: 'Open Sans', sans-serif;	
+}
+.banner-image .line2{
+	font-family: 'Roboto Slab', serif;
+}
+body{
+	@include bgc(#F0F0F0);
+}
+
+//some general variable
+$marzin-zero-auto:  0 auto;
+
+
+//Generic Css
+.outer{
+	@include float(left);
+	@include width-in-per(100%);
+}
+
+.inr{
+	@include width-in-px(1200px);
+	margin:$marzin-zero-auto;
+	max-width:100%;
+}
+.page-inner {
+    margin-bottom: 25px;
+}
+
+
+
+
+//****************************************************************************
+//*********************************Some Genral Css****************************
+//****************************************************************************
+.page-main {
+    @include float(left);
+    @include width-in-per(100%);
+}
+
+body {
+    float: left;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    width: 100%;
+}
+
+.homeboxpadding{
+	@include padding(60px,0,60px,0);
+}
+.icon.icon-mail-reply {
+    fill: $primary-blue;
+    font-size: 25px;
+    height: 25px;
+    margin-right: 10px;
+    width: 25px;
+}
+
+.comment-author.vcard b.fn {
+    color: black;
+    font-size: 14px;
+    margin-left: 13px;
+    position: relative;
+    text-transform: capitalize;
+    top: -12px;
+}
+
+.comment-author.vcard .says {
+	@include display(none);
+}
+
+.comment-body .comment-meta .comment-metadata{
+	color: $black;
+    @include font-size(14px);
+    left: 68px;
+    @include position(relative);
+    top: -32px;
+}
+
+time {
+    color: $primary-blue;
+}
+
+a {
+    color: $primary-blue;
+}
+
+article.comment-body {
+    border-bottom: 1px solid #c7c7c7;
+    @include margin(0,0,20px,0);
+    @include padding(0,0,10px,0);
+}
+
+.comment-respond {
+    border-bottom: 1px solid #c7c7c7;
+    @include margin(0,0,20px,0);
+}
+
+.page-inner section.widget {
+    border-bottom: 2px solid #c7c7c7;
+    @include margin(0, 0, 20px,0);
+    h2.widget-title {
+	    @include font-size(20px);
+	}
+	ul {
+	    list-style: outside none none;
+	    @include padding(0,0,0,0);
+	}
+}
+
+#attachmentForm .form-submit .submit {
+    @include bgc($primary-blue);
+    border: medium none;
+    @include border-radius(7px);
+    color: $white;
+    @include padding(10px,20px,10px,20px);
+    cursor:pointer;
+}
+
+#attachmentForm .form-submit .submit:hover {
+	opacity:0.8;
+}
+
+.comment-form-comment > textarea {
+    border: medium none;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px $primary-blue;
+    width: 100%;
+    padding: 15px;
+}
+.container-section{
+	@include margin(25px,0,25px,0);	
+}
+
+#wp-toolbar{
+	max-width: 100%;
+}
+
+//header section
+// .topbar{
+// 	@include bgc(#6C412E);
+// 	@include padding(10px,0,10px,0);
+
+// 	.top-left-link ul{
+// 		@include padding(0,0,0,0);
+// 		@include margin(0,0,0,0);
+// 		@include list-style(none);
+
+// 		li{
+// 			@include display(inline);
+// 			a:first-child{
+// 				@include margin(0,40px,0,0);
+// 				@include font-size(14px);
+// 				color:$white;
+// 			}
+// 		}		
+// 	}
+// 	.search-form {
+// 	    @include bgc(#48261c);
+// 	    @include border-radius(20px);
+// 	    @include width-in-px(260px);
+// 	    @include float(right);
+// 	}
+// 	button.search-submit {
+// 	    @include bgc(transparent);
+// 	    border:none;
+// 	}
+// 	.search-field {
+// 	    @include bgc(transparent);
+// 	    @include padding(5px,10px,5px,10px);
+// 	    border: medium none;
+// 	    color:$white;
+// 	    @include font-size(14px);
+// 	    @include width-in-px(210px);
+// 	}
+// 	.icon.icon-search {
+// 	    fill: $white;
+// 	    @include font-size(10px);
+// 	    @include height-in-px(20px);
+// 	    @include position(relative);
+// 	    top: 4px;
+// 	    @include width-in-px(20px);
+// 	}
+// }
+
+//navigation
+.nav-outer {
+    @include margin(20px,0,20px,0);
+}
+
+.navigation-top{
+	@include margin(17px,0,0,0);
+		ul#top-menu{
+			@include padding(0,0,0,0);
+			@include margin(0,0,0,0);
+			@include list-style(none);
+			@include text-align(right);
+			li{
+				@include display(inline);
+				@include margin(0,0,0,60px);
+				a{
+					@include font-size(16px);
+					@include font-weight(600);
+					color:$black;
+				}
+			}		
+		}
+}
+
+//banner
+.home-banner{
+	.banner-image{
+		background-image:url('../images/dog-banner.png');
+		@include height-in-px(470px);
+		.col-md-4{
+			@include margin(110px,0,0,0)
+		}
+		.line1{
+			@include font-size(16px);
+			@include text-transform(uppercase);
+			@include text-align(center);
+			color:$white;
+		}
+		.line2{
+			@include font-size(87px);
+			@include line-height(85px);
+			@include font-weight(700);
+			@include text-transform(capitalize);
+			color:$yellow;
+		}
+		.line3{
+			@include font-size(16px);
+			@include text-transform(capitalize);
+			color:$white;
+			@include margin(10px,0,0,0);
+		}
+		.line4{
+			@include text-align(center);
+			@include margin(35px,0,0,0);
+		}
+	}
+}
+
+
+//home page
+.homepage{
+	.homebox{
+		@extend.homeboxpadding;
+		.feature-title{
+			@include text-transform(uppercase);
+			@include font-size(16px);
+			@include font-weight(600);
+			@include margin(35px,0,30px,0);
+			color:$brown-color;
+		}
+		.feature-text{
+			@include font-size(14px);
+			@include font-weight(400);
+			color:$brown-text-color;
+		}
+		.box-heading {
+		   @include display(block);
+		   @include float(left);
+		   @include text-align(center);
+		   @include width-in-per(100%);
+		   div{
+		   	@include font-size(18);
+		   }
+		   h2{
+		   	@include font-size(28);
+		   	@include font-weight(700);
+		   	color:$brown-color;
+		   	@include text-transform(uppercase);
+		   	@include margin(0,0,40px,0);
+		   }
+		}
+	}
+	.box2{
+		background-image:url('../images/category-bg.png');
+		.cat-image-box{
+			position: relative;
+		}
+		.cat-image-box:hover .cat-title-desc {
+		    background-color: rgba(35, 163, 188, 0.7);
+		    @include height-in-px(274px);
+		    transition: height 1s ease 0s;
+		}
+		.cat-image-box:hover .cat-title{
+			top:0
+		}
+		.cat-image-box .cat-title-desc {
+		    background-color: rgba(35, 163, 188, 0.7);
+		    bottom: 0;
+		    @include height-in-px(0);
+		    @include position(absolute);
+		    transition: height 1s ease 0s;
+		    @include width-in-per(100%);
+		}
+		.cat-image-box:hover .cat-desc{
+			opacity:1;
+		}
+		h2{
+			color:$white !important;
+		}
+		.col-md-4{
+			@include margin(0,0,25px,0);
+			@include height-in-px(273px);
+			overflow:hidden;
+		}
+		.cat-image-box{
+			@include position('relative');
+			img{
+				@include width-in-per(100%);
+			}
+			.cat-title {
+			    bottom: 0px;
+			    color: $white;
+			    background-color: transparent;
+			    @include font-size(24px);
+			    @include font-weight(bold);
+			    @include position(absolute);
+			    @include text-align(center);
+			    @include text-transform(uppercase);
+			    @include width-in-per(100%);
+			}
+			.cat-desc {
+			    bottom: 10px;
+			    color: $white;
+			    opacity: 0;
+			    @include position(absolute);
+			}
+		}
+	}
+
+	.box3{
+		.img img{
+			@include border-radius(20px);
+			@include width-in-per(100%);
+		}
+		.title{
+			@include font-size(20px);
+			@include font-weight(700);
+			@include text-transform(uppercase);
+			@include margin(28px,0,0,0);
+			color:$black;
+		}
+		.date{
+			@include font-size(15px);
+			@include font-weight(400);
+			@include text-transform(capitalize);
+			color:#c7c7c7;
+		}
+		.content{
+			@include font-size(16px);
+			@include font-weight(400);
+			@include text-transform(capitalize);
+			color:$black;
+		}
+		.readmore{
+			@include margin(25px, 0, 0, 0)
+		}
+	}
+
+	.box4{
+		background-image:url('../images/category-bg.png');
+		.col-md-3{
+			.img img{
+				@include width-in-per(100%);
+			}
+			.content {
+			   @include bgc($white);
+			   @include padding(20px,15px,20px,15px);
+			}
+			.below-sec {
+			    @include bgc($white);
+			    @include float(left);
+			    @include width-in-per(100%);
+			    @include padding(0,15px,23px,15px);
+			    .below-sec-img{
+			    	@include float(left);
+			    	img{
+			    		@include border-radius(50%);
+			    	}
+			    }
+			    .below-sec-content{
+			    	@include float(right);	
+			    	.title {
+					   @include font-size(14px);
+					   @include font-weight(700);
+					   @include text-transform(uppercase);
+					}
+					.date {
+					    color: $black;
+					    @include font-size(13px);
+					}
+			    }
+			}
+		}
+		h2{
+			color:$white !important;
+		}
+	}
+}
+
+//=================================
+.pet-profile{
+	.banner-image{
+		background-image:url('../images/dog-banner.png');
+		@include height-in-px(280px);
+	}
+	.white-strip{
+		@include height-in-px(100px);
+		@include bgc($white);
+		box-shadow: 0 0 10px #c7c7c7;
+		.ws-left{
+		    .img{
+			    border: 4px solid white;
+			    border-radius: 4px;
+			    float: left;
+			    position: relative;
+			    top: -70px;
+			    width: auto;
+			    .view {
+				    bottom: 4px;
+				    color: $white;
+				    @include font-size(10px);
+				    @include position(absolute);
+				    right: 6px;
+				}
+		    }
+		    .short-info{
+			    @include float(left);
+			    @include margin(12px,0,0,35px);
+			    
+		    	h1 {
+				    @include font-size(28px);
+				    @include font-weight(700);
+				    @include margin(0,0,0,0);
+				    @include padding(0,0,0,0);
+				}
+				.bread {
+				   @include font-size(14px);
+				   @include font-weight(700);
+				   @include text-transform(capitalize);
+				   color:#878787;
+				}
+				.gen-age {
+				    color: #878787;
+				   @include font-size(12px);
+				}
+		    }
+		}
+
+		.ws-right{
+			@include text-align(right);
+			.owner-info {
+			   @include float(right);
+			   width: auto;
+			   .owner-info-left {
+				    @include float(left);
+				    @include margin(25px,25px,0,0);
+				    width: auto;
+				    .name {
+					    @include font-weight(700);
+					    @include font-size(16px);
+					    @include text-transform(capitalize);
+					}
+					span:last-child{
+						@include font-size(12px);
+					}
+					.bottom > span:first-child {
+					    @include font-size(12px);
+					}
+					.bottom > span:last-child {
+					    @include font-size(12px);
+					}
+				}
+				.owner-info-right{
+					@include float(right);
+					img {
+					    border: 3px solid #bdbdbd;
+					    @include border-radius(50%);
+					    @include margin(11px,0,0,0);
+					}
+				}
+			}
+		}
+
+	}
+
+	.profile-box-container{
+		@include margin(50px,0,0,0);
+		.left-side {
+    		@include padding(0,15px,0,15px);
+    		max-width: 100%;
+		    @include width-in-px(390px);
+			.about-pet{
+				@include bgc($white);
+				border: 1px solid #c7c7c7;
+				max-width: 100%;
+				@include padding(30px,30px,30px,30px);
+				@include margin(0px,0px,30px,0px);
+				@include float(left);
+				@include width-in-px(360px);
+
+				h2{
+					@include font-size(18px);
+					@include font-weight(700);
+					@include margin(0,0,25px,0);
+					color:#6C6C6C;
+				}
+				ul{
+					@extend .ulproperty;
+					li 
+					{
+						@include float(left);
+    					@include width-in-per(100%);
+						span:first-child{@include float(left);@include width-in-per(60%);}
+						span:last-child{@include float(right);@include width-in-per(35%);}
+						span{
+							@include font-size(16px);
+							color:#A3A3A3;
+							@include text-transform(capitalize);
+						}
+					}
+				}
+			}
+
+			.about-pet-photo{
+				@include bgc($white);
+				border: 1px solid #c7c7c7;
+				max-width: 100%;
+				@include padding(30px,30px,30px,30px);
+				@include margin(0px,0px,30px,0px);
+				@include float(left);
+				@include width-in-px(360px);
+
+				h2{
+					@include font-size(18px);
+					@include font-weight(700);
+					@include margin(0,0,25px,0);
+					color:#6C6C6C;
+				}
+				ul{
+					@extend .ulproperty;
+					li 
+					{
+						@include float(left);
+					    @include margin(0,0,12px,0);
+					    @include width-in-per(48%);
+
+					    a{
+					    	img{
+					    		@include width-in-per(100%);
+								border: 1px solid #c7c7c7;
+					    	}
+					    }
+    				}
+    				li:nth-child(2n+2){
+    					@include text-align(right);
+    					@include margin(0 ,0,12px,4%);
+    				}
+				}
+			}
+		}	
+		.right-side{
+			@include width-in-px(750px);
+			@include padding(0,15px,0px,15px);
+			max-width:100%;
+			.comment-post{
+				@include padding(20px,20px,20px,20px);
+				@include bgc($white);
+				border:1px solid #c7c7c7;
+				@include width-in-per(100%);
+				@include margin(0,0,40px,0);
+				@include float(left);
+				.top{
+
+					border-bottom: 1px solid #c7c7c7;
+				    @include float(left);
+				    @include padding(0,0,20px,0);
+				    @include width-in-per(100%);
+
+					img{@include float(left);@include margin(0,20px,0,0);}
+					.info{@include float(left);}
+					.name{
+						@include font-size(14px);
+						@include font-weight(700);
+						@include text-transform(capitalize);
+					}
+					.date{
+						@include font-size(14px);
+					}
+				}
+				.bottom {
+				    @include float(left);
+				    @include padding(20px,0,0,0);
+				    @include width-in-per(100%);
+				}
+			}
+		}
+	}
+}	
+
+
+//Single Post
+
+.single-post{
+	.container-section{
+		
+		h1{
+			@include margin(0,0,0,0);
+		}
+		.single-post-meta {
+		    @include margin(0,0,20px,0);
+		}
+		.content {
+		    @include margin(20px,0,20px,0);
+		    border-bottom: 2px solid #c7c7c7;
+		}
+		.img > img {
+		    max-width: 100%;
+		}
+	}
+}
+
+
+//Css for Blog
+body.blog, body.archive.date{
+	h1{
+		@include margin(0,0,20px,0);
+		@include text-transform(capitalize);
+	}
+	.blog-box {
+	    box-shadow: 0 0 2px 1px #c7c7c7;
+	    @include margin(0,0,20px,0);
+	    @include padding(10px,10px,10px,10px);
+	    @include float(left);
+	    @include width-in-per(100%);
+		.blog-all-desc {
+			@include float(left);
+			@include margin(10px, 0, 0,0);
+		}
+	    .blog-img {
+		    @include float(left);
+		    @include margin(0,10px,0,0);
+		    img{
+		    	max-width:100%;
+		    }
+		}
+		h2 {
+		    @include font-size(20px);
+		    @include margin(0,0,15px,0);
+		}
+		.blog-meta {
+		    color: gray;
+		    @include font-size(14px);
+		}
+		.readmore{ 
+			a {
+			    @include bgc($primary-blue);
+			    @include border-radius(30px);
+			    color: $white;
+			    @include float(right);
+			    @include margin(10px,0,0,0);
+			    @include padding(8px,30px,8px,30px);
+			}
+			a:hover{
+				opacity:0.8;
+			}
+		}	
+	}
+}
+
+
+//Registration form
+body.registration{
+	#basic-details-section{
+		label{
+		    @include font-weight(400);
+		}
+		input{
+			width:100% !important;
+		}
+	} 
+	#buddypress .standard-form legend{
+	    @include font-size(20px) ;
+	    font-style:normal ;
+	    @include font-weight(400);
+	}
+	#buddypress .standard-form label{
+		@include font-weight(400);	
+	}
+}
+
+
+//List All Pet Profile
+
+.post-type-archive-pet_profiles .box-profile, .tax-pet_profiles_cat .box-profile{
+	//background-image:url('../images/category-bg.png');
+	.cat-image-box:hover .cat-title-desc {
+	    background-color: rgba(35, 163, 188, 0.7);
+	    @include height-in-px(274px);
+	    transition: height 1s ease 0s;
+	}
+	.cat-image-box:hover .cat-title{
+		top:0
+	}
+	.cat-image-box{
+			position: relative;
+	}
+	.cat-image-box .cat-title-desc {
+	    background-color: rgba(35, 163, 188, 0.7);
+	    bottom: 0;
+	    @include height-in-px(0);
+	    @include position(absolute);
+	    transition: height 1s ease 0s;
+	    @include width-in-per(100%);
+	}
+	.cat-image-box:hover .cat-desc{
+		opacity:1;
+	}
+	h2{
+		color:$white !important;
+	}
+	.col-md-4{
+		@include margin(0,0,25px,0);
+		@include height-in-px(273px);
+		overflow:hidden;
+	}
+	.cat-image-box{
+		@include position('relative');
+		img{
+			@include width-in-per(100%);
+		}
+		.cat-title {
+		    bottom: 0px;
+		    color: $white;
+		    background-color: transparent;
+		    @include font-size(24px);
+		    @include font-weight(bold);
+		    @include position(absolute);
+		    @include text-align(center);
+		    @include text-transform(uppercase);
+		    @include width-in-per(100%);
+		}
+		.cat-desc {
+		    bottom: 10px;
+		    color: $white;
+		    opacity: 0;
+		    @include position(absolute);
+		}
+	}
+}
+
+
+//User Profile Page
+.type-bp_members #buddypress{
+	ul.item-list li{
+		border-bottom: 1px solid $primary-blue;
+	}
+	ul.item-list li:last-child{
+		border: none;
+	}
+	div.profile h2 {
+		border-bottom: 1px solid #c7c7c7;
+		@include font-size(23px);
+		margin-bottom: auto;
+		margin-top: 15px;
+		@include padding(0,0,10px,0);
+	}
+	#item-nav{
+		@include float(left);
+    	@include width-in-per(30%);
+    	ul{
+    		li{
+    			@include bgc(#6c412e);
+			    border-bottom: 1px solid White;
+			    @include float(left);
+			    @include width-in-per(100%);
+			    a{
+			    	color: $white;
+			    	span{
+			    		@include float(right);
+			    	}
+			    }
+    		}
+    		li.selected {
+			    @include bgc(#10a0c5);
+			}
+			li:hover {
+			    @include bgc(#10a0c5);
+			}
+    	}
+	}
+	#item-body {
+	    @include float(left);
+    	@include width-in-per(70%);
+		//@include padding(0,0,0,0);
+    	div#subnav.item-list-tabs{
+    		@include margin(0,0,25px,0);
+    	}
+	}
+}
+
+
+// Group
+.type-bp_group #buddypress{
+	#item-body {
+		@include padding(0,0,0,0);
+		#subnav{
+			li.groups-members-search, li#group_members-order-select{
+				@include bgc(transparent);
+				border: none;
+			}
+		}	
+	}
+	#item-nav{
+		.item-list-tabs li.current.selected a {
+			background-color: transparent;
+			color: white;
+			font-weight: normal;
+		}
+		li.current.selected {
+			background-color: #6c412e;
+			border: 2px solid #6c412e;
+		}
+		li:hover {
+			background-color: #6c412e;
+			border: 2px solid #6c412e;
+		}
+		li {
+			background-color: #10a0c5;
+			border: 2px solid #10a0c5;
+			border-radius: 18px;
+			margin-right: 10px;
+			padding: 0 5px;
+			transition: all 0.3s ease 0s;
+			a{
+				color: $white;
+			}
+		}
+	}
+	ul.item-list{
+		border: none;
+	}
+	ul.item-list li{
+		border-bottom: 1px solid $primary-blue;
+	}
+	// ul#member-list li {
+	// 	border: medium none;
+	// 	box-shadow: 1px 1px 1px 1px #c7c7c7;
+	// 	float: left;
+	// 	margin-bottom: 15px;
+	// 	margin-right: 15px;
+	// 	min-height: 111px;
+	// 	padding: 5px;
+	// 	width: 15.4%;
+	// }
+	// ul#member-list li:nth-child(6n+6) {
+	// 	margin-right: 0;
+	// }
+	ul.item-list li:last-child {
+		border: none;
+	}
+}
+
+//common of buddypress
+body.buddypress #buddypress{
+
+	#whats-new-form{
+		float: left;
+		width: 100%;
+	}
+
+	ul.item-list li div.action{top: 11px;}
+
+	.item-list-tabs ul{
+		li#groups-all a,  li#members-all a, li#members-personal a, li#members-following a{
+			background-color: transparent;
+			color: white;
+			font-weight: normal;
+		}
+		li#groups-all.selected, li#members-all.selected, li#members-personal.selected, li#members-following.selected {
+			background-color: #6c412e;
+			border: 2px solid #6c412e;
+		}
+	}	
+
+	#members-directory-form {
+		.item-list-tabs{
+			.item-list-tabs li.selected a {
+				background-color: transparent;
+				color: white;
+				font-weight: normal;
+			}
+			li.selected {
+				background-color: #6c412e;
+				border: 2px solid #6c412e;
+			}
+			li:hover {
+				background-color: #6c412e;
+				border: 2px solid #6c412e;
+			}
+			li {
+				background-color: #10a0c5;
+				border: 2px solid #10a0c5;
+				border-radius: 18px;
+				margin-right: 10px;
+				padding: 0 5px;
+				transition: all 0.3s ease 0s;
+				a{
+					color: $white;
+				}
+			}
+		}	
+
+		
+	}
+
+	.follow-button{
+		@include position(relative);
+		top: 8px;
+	}
+
+	ul.item-list li{
+		border-bottom: 1px solid $primary-blue;
+	}
+	ul.item-list li:last-child{
+		border: none;
+	}
+	.load-more a {
+		@include bgc($primary-blue);
+		@include border-radius(22px);
+		@include padding(10px,20px,10px,20px);
+		color:$white;
+		-webkit-transition: 1s; /* Safari */
+    	transition: 1s;
+	}
+	.load-more a:hover {
+		@include bgc($brown-color);
+		color:$white;
+		text-decoration: none;
+		color:$white;
+	}
+	.activity-inner img{
+		@include display(block);
+		@include margin(25px,0,0,0);
+		max-width: 100%;
+	}
+
+	.activity-inner iframe {
+		@include display(block);
+		@include margin(25px,0,0,0);
+		max-width: 100%;
+		//@include width-in-px(300px);
+		//@include height-in-px(200px);
+		max-width: 100%;
+	}
+
+	#groups-my-groups-personal-li > a {
+		@include bgc(transparent);
+	}
+	#item-body .item-list-tabs{
+		.item-list-tabs li.current a {
+			background-color: transparent;
+			color: white;
+			font-weight: normal;
+		}
+		li.current {
+			background-color: #6c412e;
+			border: 2px solid #6c412e;
+		}
+		li:hover {
+			background-color: #6c412e;
+			border: 2px solid #6c412e;
+		}
+		li {
+			background-color: #10a0c5;
+			border: 2px solid #10a0c5;
+			border-radius: 18px;
+			margin-right: 10px;
+			padding: 0 5px;
+			transition: all 0.3s ease 0s;
+			a{
+				color: $white;
+			}
+		}
+	}
+
+	.item-list-tabs.activity-type-tabs ul, #groups-directory-form .item-list-tabs ul{
+		li.selected a {
+			background-color: transparent;
+			color: white;
+			font-weight: normal;
+		}
+		li.selected {
+			background-color: #6c412e;
+			border: 2px solid #6c412e;
+		}
+		li:hover {
+			background-color: #6c412e;
+			border: 2px solid #6c412e;
+		}
+		li {
+			background-color: #10a0c5;
+			border: 2px solid #10a0c5;
+			border-radius: 18px;
+			margin-right: 10px;
+			padding: 0 5px;
+			transition: all 0.3s ease 0s;
+			a{
+				color: $white;
+			}
+		}
+	}
+
+	li.feed{
+		display: none;
+
+		// background-color: #6c412e;
+		// border: 2px solid #6c412e;
+		// border-radius: 18px;
+		// margin-right: 10px;
+		// padding: 0 5px;
+		// a{
+		// 	background-color: transparent;
+		// 	color: white;
+		// 	font-weight: normal;	
+		// }
+	}
+
+	#invite-anyone-by-email{
+		#invite-anyone-steps, .submit{
+			@include margin(0,0,0,0);
+			@include padding(0,0,0,0);
+		}
+
+		// .submit input{
+		// 	@include bgc($primary-blue);
+		// 	border: medium none;
+		// 	@include border-radius(7px);
+		// 	color:$white;
+		// 	cursor: pointer;
+		// 	@include padding(10px,20px,10px,20px);
+		// 	@include font-size(15px);
+		// }
+		// .submit input:hover{
+		// 	opacity: 0.8;
+		// }
+	}
+
+	#settings-form{
+		table{
+			@include margin(0,0,0,0);
+    		@include width-in-per(100%);
+			border-bottom: 1px solid $primary-blue;
+		}
+		table.profile-settings{
+			@include margin(0,0,30px,0);
+			border: none;
+		}
+		// .submit input{
+		// 	@include bgc($primary-blue);
+		// 	border: medium none;
+		// 	@include border-radius(7px);
+		// 	color:$white;
+		// 	cursor: pointer;
+		// 	@include padding(10px,20px,10px,20px);
+		// 	@include font-size(15px);
+		// }
+		// .submit input:hover{
+		// 	opacity: 0.8;
+		// }
+	}
+	#item-body{
+		.submit input{
+			@include bgc($primary-blue);
+			border: medium none;
+			@include border-radius(7px);
+			color:$white;
+			cursor: pointer;
+			@include padding(10px,20px,10px,20px);
+			@include font-size(15px);
+		}
+		.submit input:hover{
+			opacity: 0.8;
+		}	
+
+		#subnav.item-list-tabs{
+			ul{
+				li.current{
+					a{
+						@include bgc(transparent);
+					}
+				}
+			}
+		}
+	}
+
+	#create-group-form {
+
+		#group-create-tabs ul {
+				li.current a {
+					background-color: transparent;
+					color: white;
+					font-weight: normal;
+				}
+				li.current {
+					background-color: #6c412e;
+					border: 2px solid #6c412e;
+				}
+				li:hover {
+					background-color: #6c412e;
+					border: 2px solid #6c412e;
+					color: $white;
+				}
+				li {
+					background-color: #10a0c5;
+					border: 2px solid #10a0c5;
+					border-radius: 18px;
+					margin-right: 10px;
+					padding: 0 5px;
+					transition: all 0.3s ease 0s;
+					color: $white;
+					a{
+						color: $white;
+					}
+				}
+		}
+
+		#group-creation-create{
+			@include bgc($primary-blue);
+			border: medium none;
+			@include border-radius(7px);
+			color:$white;
+			cursor: pointer;
+			@include padding(10px,20px,10px,20px);
+			@include font-size(15px);	
+		}
+		#group-creation-create:hover{
+			opacity: 0.8;
+		}
+		#previous-next{
+			input#group-creation-previous{
+				@include bgc ($primary-blue);
+				color: $white;
+			}
+			input#group-creation-previous:hover{
+				@include bgc ($brown-color);
+			}
+		}
+		#previous-next  {
+			input#group-creation-next{
+				@include bgc ($primary-blue);
+				color: $white;
+			}
+			input#group-creation-next:hover{
+				@include bgc ($brown-color);
+			}	
+
+		}
+		#bp-delete-cover-image{
+			@include bgc ($primary-blue);
+			color: $white;	
+		}
+		#bp-delete-cover-image:hover{
+			@include bgc ($brown-color);	
+		}
+
+		#group-creation-finish{
+			@include bgc ($primary-blue);
+			color: $white;
+		}
+		#group-creation-finish:hover{
+			@include bgc ($brown-color);
+		}
+		ul{
+			@include padding(0,0,0,0);
+		}
+	}
+
+	#item-nav{
+		.item-list-tabs{
+			ul{
+				li.current.selected{
+					a{
+						@include font-weight(400);
+						@include bgc($primary-blue);
+					}
+				}
+			}
+		}
+	}
+
+	#whats-new-submit {
+		input#aw-whats-new-submit{
+			@include bgc ($primary-blue);
+			color: $white;
+			@include margin(10px,0,0,0);
+		}
+		input#aw-whats-new-submit:hover{
+			@include bgc ($brown-color);
+		}
+
+	}
+
+	#item-header-cover-image #item-buttons .follow-button {
+		margin-top: 2px;
+	}
+
+	ul.first.acfb-holder{
+		@include padding(0,0,0,0);
+	}
+	
+}
+
+
+.bp_group.type-bp_group #buddypress #item-body  {
+	#subnav{	
+		float: left;
+		width: 30%;
+		@include margin(22px,0,20px,0);
+		ul{
+			li{
+				border-bottom: 1px solid #fff;
+				@include border-radius(0);
+				@include float(left);
+				@include width-in-per(100%);
+				a{
+					span{
+						@include float(right);
+					}
+				}
+			}
+		}
+	}
+	#group-settings-form, .rtmedia-container {
+		@include float(left);
+		@include margin(22px,0,0,5%);
+		@include width-in-per(65%);
+	}	
+}
+
+
+.buddypress #buddypress .activity-list li.load-more a, 
+.buddypress #buddypress .activity-list li.load-newest a{
+	color:$white;
+}
+
+
+.type-bp_activity #buddypress{
+	.item-list-tabs li.selected a {
+		background-color: transparent;
+		color: white;
+		font-weight: normal;
+	}
+	li.selected {
+		background-color: #6c412e;
+		border: 2px solid #6c412e;
+	}
+	
+	
+}
+
+
+// Signup pages
+body.registration{
+	h1.entry-title{text-align: center;}
+	#register-page{
+		@include float(left);
+		@include width-in-per(100%);
+		#signup_form{
+			margin: 0 auto;
+			max-width: 100%;
+			@include width-in-px(600px);
+			.field-visibility-settings-toggle {
+				margin-top: 15px;
+			}
+			#basic-details-section, #profile-details-section{
+				@include float(left);
+				@include width-in-per(100%);
+				margin-bottom: 25px;
+				input[type="text"]{
+					@include width-in-per(100%);
+				}
+			}
+			.submit {
+				@include float(left);
+				@include width-in-per(100%);
+				#signup_submit {
+					@include bgc ($primary-blue);
+					border: medium none;
+					@include border-radius(16px);
+					color: $white;
+					@include font-size(14px);
+					@include padding(9px,15px,9px,15px);
+					transition: all 0.3s ease 0s;
+				}
+				#signup_submit:hover {
+					@include bgc ($brown-color);	
+				}
+			}
+		}	
+	}
+}
+
+// Login page
+.login-form-container{
+	@include float(left);
+	@include width-in-per(100%);
+	#login-form {
+		margin: 50px auto 22px;
+		width: 300px;
+		.login-form-error{
+			color: red;
+			@include margin(20px,0,20px,0);
+			@include text-transform(capitalize);
+		}
+	}
+}
+

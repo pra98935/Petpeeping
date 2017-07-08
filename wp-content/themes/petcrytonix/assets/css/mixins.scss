@@ -1,0 +1,72 @@
+//mixins
+
+@mixin font-size($font-size) {
+  font-size:$font-size;
+}
+
+@mixin font-weight($font-weight) {
+  font-weight:$font-weight;
+}
+
+@mixin text-transform($text-transform) {
+  text-transform:$text-transform;
+}
+
+@mixin text-align($text-align) {
+  text-align:$text-align;
+}
+
+@mixin line-height($line-height) {
+  line-height:$line-height;
+}
+
+@mixin float($floatvalue) {
+  float:$floatvalue;
+}
+
+@mixin width-in-per($width) {
+  width:$width;
+}
+
+@mixin width-in-px($width) {
+  width:$width;
+}
+
+@mixin height-in-per($height) {
+  height:$height;
+}
+
+@mixin height-in-px($height) {
+  height:$height;
+}
+
+@mixin display($display) {
+  display:$display;
+}
+
+@mixin position($position-val) {
+  position:$position-val;
+}
+
+@mixin bgc($bgcolor) {
+  background-color:$bgcolor;
+}
+
+@mixin padding($top,$right,$bottom,$left) {
+  padding:$top $right $bottom $left;
+}
+
+@mixin margin($top,$right,$bottom,$left) {
+  margin:$top $right $bottom $left;
+}
+
+@mixin list-style($list-style) {
+  list-style:$list-style;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}

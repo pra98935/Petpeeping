@@ -1,0 +1,13 @@
+/*
+ * Css Used Only For Admin
+ */
+
+#dev_admin_statistics .post_list_section .top-post-count {float: right;text-transform: full-width;}
+#dev_admin_statistics .post_list_section .dev_post_list{padding: 8px 6px;}
+#dev_admin_statistics .post_list_section .dev_post_list:hover {background-color: #eee;}
+#dev_admin_statistics .post_list_section .dev_post_list a {margin-left: 4px;}
+#dev_admin_statistics .post_list_section {box-shadow: 0 0 4px 2px #ccc;margin: 16px 0px;padding: 4px 6px;}
+#dev_admin_statistics .post_list_section h3 {border-bottom: 1px solid #ccc;padding-bottom: 12px;}
+.manage-column.column-total_hits {width: 80px;}
+form.dev_setting_form table.widefat tr th {width: 260px;}
+.misc-pub-section.total-post-hits-count::before {content: "";font-family: dashicons;font-size: 21px;color: #82878c;vertical-align: middle;}

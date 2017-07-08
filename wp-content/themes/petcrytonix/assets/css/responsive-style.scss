@@ -1,0 +1,718 @@
+@import 'mixins';
+
+
+// color variable
+$brown-color: #6C412E;
+$white: #fff;
+$black: #000;
+$yellow:#FDD22E;
+$primary-blue:#10A0C5;
+$brown-text-color: #782e2e;
+$feature-sub-heading: #765555;
+
+@media screen and (max-width: 479px){
+	body header#masthead{
+		@include padding(0,0,0,0);
+		.desktop-menu{@include display(none);}
+		.logo{@include text-align(center);}
+		.navigation-box{
+			@include bgc($brown-color);
+			.navigation-top {
+				@include margin(40px,0,0,0);
+				#top-menu > li {	
+					@include display(block);
+					@include margin(10px,0,10px,0);
+					@include text-align(left);
+					border-bottom: 1px solid $white;
+					padding-bottom: 12px;
+				}
+			}
+			.navigation-top{
+				ul#top-menu{
+					li {
+						a{
+							color: $white;
+						}
+						a:hover{
+							color: $primary-blue;
+						}
+						svg{
+							fill: $white;
+						}
+					}
+					li.current-menu-item, li.current-menu-parent{
+						a{
+							color: $primary-blue;	
+						}
+						svg{
+							fill: $primary-blue;
+						}
+					}
+				} 
+			}
+		}
+		.mobile-menu {
+			bottom: 0;
+			@include height-in-per(100%);
+			@include padding(10px,10px,10px,10px);
+			@include position(fixed);
+			top: 0px;
+			@include width-in-px(300px);
+			z-index: 999999;
+			-webkit-transition: 1s; /* Safari */
+    		transition: 2s;
+			left: 0px;
+			@include float(left);
+		}
+
+		.close-menu {
+				@include float(right);
+				    cursor: pointer;
+					@include position(relative);
+					z-index: 999999;
+		}
+
+		.mobile-menu-hide{
+			bottom: 0;
+			@include height-in-per(100%);
+			@include padding(10px,10px,10px,10px);
+			@include position(fixed);
+			top: 0px;
+			@include width-in-px(300px);
+			z-index: 999999;
+			-webkit-transition: 1s; /* Safari */
+    		transition: 2s;
+			left: -300px;
+			@include float(left);
+		}
+	}
+
+	// Home Page
+
+	.homepage{
+		.box1.homebox{
+			.col-md-3.text-center{
+				@include margin(0,0,30px,0);
+				.feature-title{
+					@include margin(18px,0,18px,0);
+				}
+			}
+			.col-md-3.text-center:last-child{
+				@include margin(0,0,0,0);
+			}
+		} 
+		.box3{
+			.col-md-4{
+				@include margin(0,0,30px,0);
+			}
+			.col-md-4:last-child{
+				@include margin(0,0,0,0);
+			}
+		}
+		.box4{
+			.col-md-3{
+				@include margin(0,0,30px,0);
+			}
+			.col-md-3:last-child{
+				@include margin(0,0,0,0);
+			}
+		}
+	} 
+
+	// Footer
+	body footer#colophon{ 
+		section {
+			float: left;
+			text-align: center;
+			width: 100%;
+			@include margin(0,0,30px,0);
+			h2.widget-title{
+				@include margin(0,0,10px,0);
+			}
+		}
+		.widget .recent_post-content {
+			@include padding(0,0,0,0);
+		}
+		.widget .recent_post-img {
+			@include float(none);
+		}
+		.widget_recent_entries ul li{
+			@include text-align(center);
+		}
+	}	
+	
+
+	// Blog
+	body.blog, body.archive.date{
+		h1{
+			@include margin(0,0,20px,0);
+			@include text-transform(capitalize);
+		}
+		.blog-box {
+			.blog-img {
+				@include float(left);
+				@include margin(0,0,0,0);
+				@include width-in-per(100%);
+				img{
+					@include width-in-per(100%);
+					max-width:100%;
+				}
+			}
+		}
+	}
+
+	// profile page
+	//User Profile Page
+	.type-bp_members #buddypress{
+		
+		#item-nav{
+			@include float(none);
+			@include width-in-per(100%);
+			ul{
+				li{
+					@include bgc(#6c412e);
+					border-bottom: none;
+					@include float(left);
+					width:auto;
+					a{
+						color: $white;
+						span{
+							@include float(right);
+						}
+					}
+				}
+				li.selected {
+					@include bgc(#10a0c5);
+				}
+				li:hover {
+					@include bgc(#10a0c5);
+				}
+			}
+		}
+		#item-body {
+			@include float(none);
+			width:auto;
+			@include padding(0,0,0,0);
+			div#subnav.item-list-tabs{
+				@include margin(25px,0,25px,0);
+				li{
+					@include margin(0,5px,5px,0);
+				}
+			}
+		}
+	}
+
+	// pet profile page
+	.single-pet_profiles{
+		.pet-profile
+		{
+			.white-strip{
+				@include height-in-px(220px);
+				.ws-right{
+					@include margin(-50px,0,0,0);
+				}
+			}
+		} 
+		.pet-profile-banner{
+			.banner-image{
+				background-position: center center;
+    			background-size: cover;
+			}
+		}
+		.right-side{
+			.comment{
+				img{
+					max-width: 100%;
+					height: auto;
+				}
+				iframe{
+					max-width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+
+	// top bar
+
+	#wpadminbar{
+		@include padding(0,15px,0,15px);
+		#wp-toolbar{
+			max-width: 100%;
+			@include padding(0,0,0,0);
+			#wp-admin-bar-bp-login, #wp-admin-bar-bp-register {
+				@include display(block);
+				@include margin(0,10px,0,0);
+			}
+			#wp-admin-bar-top-secondary{
+				@include display(block);
+				#wp-admin-bar-search{
+					@include display(block);
+					#adminbarsearch{
+						@include margin(8px,0,0,0);
+					}
+				}
+			} 
+		}
+	}
+
+	// member page
+	body.buddypress #buddypress {
+		div.dir-search{
+			@include margin(0,0,0,0);
+		}
+		.item-list-tabs {
+			li{
+				@include margin(0,10px,10px,0);
+			}
+		}
+	}		
+
+	// user profile page
+	body.buddypress #buddypress{
+		#item-header-cover-image #item-buttons .follow-button{
+			@include position(relative);
+			top: 0;
+		}
+		div#item-header div#item-actions{
+			@include width-in-per(100%);
+			@include text-align(center);
+			@include padding(10px,0,10px,0);
+			ul#group-admins {
+				margin: 0 auto;
+				@include padding(0,0,0,0);
+				@include width-in-px(50px);
+			}
+		}
+		div.activity-meta{
+			a{
+				@include padding(3px,3px,3px,3px);
+			}
+			.rtm-activity-privacy-opt{
+				@include margin(5px,0,0,0);
+			}
+		}
+		.activity-inner{
+			iframe{
+				height: auto;
+			}
+		} 
+	} 
+	
+	// group page
+	.bp_group.type-bp_group{
+		#buddypress {
+			#item-body{
+				  #subnav{
+					  @include width-in-per(100%);
+				  }
+			}
+		}
+	}		
+
+	.bp_group.type-bp_group #buddypress #item-body #group-settings-form, .bp_group.type-bp_group #buddypress #item-body .rtmedia-container{
+		@include width-in-per(85%);
+	}
+	body.buddypress #buddypress .group-members-list ul#members-list li div.action {
+		position: static;
+		top: 11px;
+		a {
+			float: left;
+			margin-bottom: 5px;
+			margin-right: 5px;
+			padding: 3px;
+		}
+	}
+ 
+
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+	body header#masthead{
+		@include padding(0,0,0,0);
+		.desktop-menu{@include display(none);}
+		.logo{@include text-align(center);}
+		.navigation-box{
+			@include bgc($brown-color);
+			.navigation-top {
+				@include margin(40px,0,0,0);
+				#top-menu > li {	
+					@include display(block);
+					@include margin(10px,0,10px,0);
+					@include text-align(left);
+					border-bottom: 1px solid $white;
+					padding-bottom: 12px;
+				}
+			}
+			.navigation-top{
+				ul#top-menu{
+					li {
+						a{
+							color: $white;
+						}
+						a:hover{
+							color: $primary-blue;
+						}
+						svg{
+							fill: $white;
+						}
+					}
+					li.current-menu-item, li.current-menu-parent{
+						a{
+							color: $primary-blue;	
+						}
+						svg{
+							fill: $primary-blue;
+						}
+					}
+				} 
+			}
+		}
+		.mobile-menu {
+			bottom: 0;
+			@include height-in-per(100%);
+			@include padding(10px,10px,10px,10px);
+			@include position(fixed);
+			top: 0px;
+			@include width-in-px(300px);
+			z-index: 999999;
+			-webkit-transition: 1s; /* Safari */
+    		transition: 2s;
+			left: 0px;
+			@include float(left);
+		}
+
+		.close-menu {
+				@include float(right);
+				    cursor: pointer;
+					@include position(relative);
+					z-index: 999999;
+		}
+
+		.mobile-menu-hide{
+			bottom: 0;
+			@include height-in-per(100%);
+			@include padding(10px,10px,10px,10px);
+			@include position(fixed);
+			top: 0px;
+			@include width-in-px(300px);
+			z-index: 999999;
+			-webkit-transition: 1s; /* Safari */
+    		transition: 2s;
+			left: -300px;
+			@include float(left);
+		}
+	}
+
+	// Home Page
+
+	.homepage{
+		.box1.homebox{
+			.col-md-3.text-center{
+				@include margin(0,0,30px,0);
+				.feature-title{
+					@include margin(18px,0,18px,0);
+				}
+			}
+			.col-md-3.text-center:last-child{
+				@include margin(0,0,0,0);
+			}
+		} 
+		.box3{
+			.col-md-4{
+				@include margin(0,0,30px,0);
+			}
+			.col-md-4:last-child{
+				@include margin(0,0,0,0);
+			}
+		}
+		.box4{
+			.col-md-3{
+				@include margin(0,0,30px,0);
+			}
+			.col-md-3:last-child{
+				@include margin(0,0,0,0);
+			}
+		}
+	} 
+
+	// Footer
+	body footer#colophon{ 
+		section {
+			float: left;
+			text-align: center;
+			width: 100%;
+			@include margin(0,0,30px,0);
+			h2.widget-title{
+				@include margin(0,0,10px,0);
+			}
+		}
+		.widget .recent_post-content {
+			@include padding(0,0,0,0);
+		}
+		.widget .recent_post-img {
+			@include float(none);
+		}
+		.widget_recent_entries ul li{
+			@include text-align(center);
+		}
+	}	
+	
+
+	// Blog
+	body.blog, body.archive.date{
+		h1{
+			@include margin(0,0,20px,0);
+			@include text-transform(capitalize);
+		}
+		.blog-box {
+			.blog-img {
+				@include float(left);
+				@include margin(0,0,0,0);
+				@include width-in-per(100%);
+				img{
+					@include width-in-per(100%);
+					max-width:100%;
+				}
+			}
+		}
+	}
+
+	// profile page
+	//User Profile Page
+	.type-bp_members #buddypress{
+		
+		#item-nav{
+			@include float(none);
+			@include width-in-per(100%);
+			ul{
+				li{
+					@include bgc(#6c412e);
+					border-bottom: none;
+					@include float(left);
+					width:auto;
+					a{
+						color: $white;
+						span{
+							@include float(right);
+						}
+					}
+				}
+				li.selected {
+					@include bgc(#10a0c5);
+				}
+				li:hover {
+					@include bgc(#10a0c5);
+				}
+			}
+		}
+		#item-body {
+			@include float(none);
+			width:auto;
+			@include padding(0,0,0,0);
+			div#subnav.item-list-tabs{
+				@include margin(25px,0,25px,0);
+				li{
+					@include margin(0,5px,5px,0);
+				}
+			}
+		}
+	}
+
+	// pet profile page
+	.single-pet_profiles{
+		.pet-profile
+		{
+			.white-strip{
+				@include height-in-px(220px);
+				.ws-right{
+					@include margin(-50px,0,0,0);
+				}
+			}
+		} 
+		.pet-profile-banner{
+			.banner-image{
+				background-position: center center;
+    			background-size: cover;
+			}
+		}
+		.right-side{
+			.comment{
+				img{
+					max-width: 100%;
+					height: auto;
+				}
+				iframe{
+					max-width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+
+	// top bar
+
+	#wpadminbar{
+		@include padding(0,15px,0,15px);
+		#wp-toolbar{
+			max-width: 100%;
+			@include padding(0,0,0,0);
+			#wp-admin-bar-bp-login, #wp-admin-bar-bp-register {
+				@include display(block);
+				@include margin(0,10px,0,0);
+			}
+			#wp-admin-bar-top-secondary{
+				@include display(block);
+				#wp-admin-bar-search{
+					@include display(block);
+					#adminbarsearch{
+						@include margin(8px,0,0,0);
+					}
+				}
+			} 
+		}
+	}
+
+	// member page
+	body.buddypress #buddypress {
+		div.dir-search{
+			@include margin(0,0,0,0);
+		}
+		.item-list-tabs {
+			li{
+				@include margin(0,10px,10px,0);
+			}
+		}
+	}		
+
+	// user profile page
+	body.buddypress #buddypress{
+		#item-header-cover-image #item-buttons .follow-button{
+			@include position(relative);
+			top: 0;
+		}
+		div#item-header div#item-actions{
+			@include width-in-per(100%);
+			@include text-align(center);
+			@include padding(10px,0,10px,0);
+			ul#group-admins {
+				margin: 0 auto;
+				@include padding(0,0,0,0);
+				@include width-in-px(50px);
+			}
+		}
+		div.activity-meta{
+			a{
+				@include padding(3px,3px,3px,3px);
+			}
+			.rtm-activity-privacy-opt{
+				@include margin(5px,0,0,0);
+			}
+		}
+		.activity-inner{
+			iframe{
+				height: auto;
+			}
+		} 
+	} 
+	
+	// group page
+	.bp_group.type-bp_group{
+		#buddypress {
+			#item-body{
+				  #subnav{
+					  @include width-in-per(100%);
+				  }
+			}
+		}
+	}		
+
+	.bp_group.type-bp_group #buddypress #item-body #group-settings-form, .bp_group.type-bp_group #buddypress #item-body .rtmedia-container{
+		@include width-in-per(85%);
+	}
+	body.buddypress #buddypress .group-members-list ul#members-list li div.action {
+		position: static;
+		top: 11px;
+		a {
+			float: left;
+			margin-bottom: 5px;
+			margin-right: 5px;
+			padding: 3px;
+		}
+	}
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#wpadminbar{
+		@include padding(0,15px,0,15px);
+		#wp-toolbar{
+			max-width: 100%;
+			@include padding(0,0,0,0);
+			#wp-admin-bar-bp-login, #wp-admin-bar-bp-register {
+				@include display(block);
+				@include margin(0,10px,0,0);
+			}
+			#wp-admin-bar-top-secondary{
+				@include display(block);
+				#wp-admin-bar-search{
+					@include display(block);
+					#adminbarsearch{
+						@include margin(8px,0,0,0);
+					}
+				}
+			} 
+		}
+	}
+
+	.logo a img {
+		width: 100%;
+	}
+
+	.navigation-top {
+		@include margin(8px,0,0,0);
+		ul#top-menu li {
+			display: inline;
+			margin: 0 0 0 18px;
+		}
+	}
+
+	.banner-image{
+		background-position: center center;
+    	background-size: cover;
+	}
+
+	body.buddypress #buddypress #item-body div.item-list-tabs ul li {
+		margin: 0 10px 10px 0;
+	}
+
+	body.groups.buddypress #buddypress #item-body div.item-list-tabs ul li {
+		margin: 0 10px 0 0;
+	}
+
+	body.groups.buddypress #buddypress div#item-header div#item-actions{
+		@include width-in-per(100%);
+		@include text-align(center);
+		@include padding(10px,0,10px,0);
+		ul#group-admins {
+			margin: 0 auto;
+			@include padding(0,0,0,0);
+			@include width-in-px(50px);
+		}
+	}
+	body.buddypress #buddypress{
+		#item-header-cover-image #item-buttons .follow-button{
+			@include position(relative);
+			top: 0;
+		}
+	}	
+	body.buddypress #buddypress #create-group-form #group-create-tabs ul li{margin-right: 5px;}
+	body.buddypress #buddypress .item-list-tabs.activity-type-tabs ul li{margin-bottom: 10px;}
+	
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+
+}
